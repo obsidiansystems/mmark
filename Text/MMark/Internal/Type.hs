@@ -16,7 +16,7 @@
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE RecordWildCards    #-}
 
-module Text.MMark.Type
+module Text.MMark.Internal.Type
   ( MMark (..)
   , Extension (..)
   , Render (..)

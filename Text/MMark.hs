@@ -132,9 +132,9 @@ module Text.MMark
 where
 
 import Data.Aeson
-import Text.MMark.Parser (MMarkErr (..), parse)
-import Text.MMark.Render (render)
-import Text.MMark.Type
+import Text.MMark.Internal.Parser (MMarkErr (..), parse)
+import Text.MMark.Internal.Render (render)
+import Text.MMark.Internal.Type
 import qualified Control.Foldl as L
 
 #if !MIN_VERSION_base(4,13,0)

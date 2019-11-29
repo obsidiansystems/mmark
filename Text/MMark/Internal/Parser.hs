@@ -19,7 +19,7 @@
 {-# LANGUAGE RankNTypes                #-}
 {-# LANGUAGE TypeFamilies              #-}
 
-module Text.MMark.Parser
+module Text.MMark.Internal.Parser
   ( MMarkErr (..)
   , parse )
 where
@@ -35,9 +35,9 @@ import Data.Monoid (Any (..))
 import Data.Ratio ((%))
 import Data.Text (Text)
 import Lens.Micro ((^.))
-import Text.MMark.Parser.Internal
-import Text.MMark.Type
-import Text.MMark.Util
+import Text.MMark.Internal.Parser.Internal
+import Text.MMark.Internal.Type
+import Text.MMark.Internal.Util
 import Text.Megaparsec hiding (parse, State (..))
 import Text.Megaparsec.Char hiding (eol)
 import Text.URI (URI)

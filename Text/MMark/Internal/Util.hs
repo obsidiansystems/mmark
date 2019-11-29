@@ -12,7 +12,7 @@
 {-# LANGUAGE LambdaCase        #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Text.MMark.Util
+module Text.MMark.Internal.Util
   ( asPlainText
   , headerId
   , headerFragment )
@@ -21,7 +21,7 @@ where
 import Data.Char (isSpace, isAlphaNum)
 import Data.List.NonEmpty (NonEmpty (..))
 import Data.Text (Text)
-import Text.MMark.Type
+import Text.MMark.Internal.Type
 import Text.URI (URI (..))
 import qualified Data.Text as T
 import qualified Text.URI  as URI
