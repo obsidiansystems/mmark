@@ -10,11 +10,13 @@
 -- Internal type definitions. Some of these are re-exported in the public
 -- modules.
 
+{-# LANGUAGE CPP                #-}
 {-# LANGUAGE DeriveDataTypeable #-}
-{-# LANGUAGE DeriveFoldable     #-}
-{-# LANGUAGE DeriveFunctor      #-}
+{-# LANGUAGE DeriveTraversable  #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE RecordWildCards    #-}
+{-# LANGUAGE DeriveLift         #-}
+{-# LANGUAGE StandaloneDeriving #-}
 
 module Text.MMark.Type
   ( MMark (..)
@@ -38,6 +40,10 @@ import Data.Monoid hiding ((<>))
 import Data.Text (Text)
 import Data.Typeable (Typeable)
 import GHC.Generics
+import Language.Haskell.TH.Syntax (Lift)
+#if MIN_VERSION_th_lift_instances(0,0,0)
+import Instances.TH.Lift ()
+#endif
 import Lucid
 import Text.URI (URI (..))
 
@@ -176,7 +182,12 @@ data Block a
     -- support cannot lack a header row.
     --
     -- @since 0.0.4.0
-  deriving (Show, Eq, Ord, Data, Typeable, Generic, Functor, Foldable)
+  deriving ( Show, Eq, Ord
+           , Data, Typeable, Generic
+           , Functor, Foldable, Traversable
+           )
+
+deriving instance Lift a => Lift (Block a)
 
 instance NFData a => NFData (Block a)
 
@@ -189,7 +200,10 @@ data CellAlign
   | CellAlignLeft      -- ^ Left-alignment
   | CellAlignRight     -- ^ Right-alignment
   | CellAlignCenter    -- ^ Center-alignment
-  deriving (Show, Eq, Ord, Data, Typeable, Generic)
+  deriving ( Show, Eq, Ord
+           , Data, Typeable, Generic
+           , Lift
+           )
 
 instance NFData CellAlign
 
@@ -216,7 +230,10 @@ data Inline
     -- ^ Link with text, destination, and optionally title
   | Image (NonEmpty Inline) URI (Maybe Text)
     -- ^ Image with description, URL, and optionally title
-  deriving (Show, Eq, Ord, Data, Typeable, Generic)
+  deriving ( Show, Eq, Ord
+           , Data, Typeable, Generic
+           , Lift
+           )
 
 instance NFData Inline
 
