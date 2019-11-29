@@ -12,7 +12,7 @@
 
 {-# LANGUAGE RankNTypes #-}
 
-module Text.MMark.Parser.Internal
+module Text.MMark.Internal.Parser.Internal
   ( -- * Block-level parser monad
     BParser
   , runBParser
@@ -49,7 +49,7 @@ import Data.Text (Text)
 import Data.Text.Metrics (damerauLevenshteinNorm)
 import Lens.Micro (Lens', (^.), (.~), set, over)
 import Lens.Micro.Extras (view)
-import Text.MMark.Parser.Internal.Type
+import Text.MMark.Internal.Parser.Internal.Type
 import Text.Megaparsec hiding (State)
 import Text.URI (URI)
 import qualified Data.HashMap.Strict as HM

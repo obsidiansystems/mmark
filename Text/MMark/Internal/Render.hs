@@ -13,7 +13,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecordWildCards   #-}
 
-module Text.MMark.Render
+module Text.MMark.Internal.Render
   ( render )
 where
 
@@ -23,9 +23,9 @@ import Data.Char (isSpace)
 import Data.Function (fix)
 import Data.List.NonEmpty (NonEmpty (..))
 import Lucid
-import Text.MMark.Trans
-import Text.MMark.Type
-import Text.MMark.Util
+import Text.MMark.Internal.Trans
+import Text.MMark.Internal.Type
+import Text.MMark.Internal.Util
 import qualified Data.List.NonEmpty as NE
 import qualified Data.Text          as T
 import qualified Text.URI           as URI

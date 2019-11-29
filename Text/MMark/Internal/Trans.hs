@@ -11,13 +11,13 @@
 
 {-# LANGUAGE LambdaCase #-}
 
-module Text.MMark.Trans
+module Text.MMark.Internal.Trans
   ( applyBlockTrans
   , applyInlineTrans )
 where
 
 import Data.Monoid hiding ((<>))
-import Text.MMark.Type
+import Text.MMark.Internal.Type
 
 -- | Apply block transformation in the @'Endo' 'Bni'@ form to a block 'Bni'.
 

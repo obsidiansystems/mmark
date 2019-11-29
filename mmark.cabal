@@ -54,13 +54,13 @@ library
     build-depends:    yaml             >= 0.8.10 && < 0.12
   exposed-modules:    Text.MMark
                     , Text.MMark.Extension
-  other-modules:      Text.MMark.Parser
-                    , Text.MMark.Parser.Internal
-                    , Text.MMark.Parser.Internal.Type
-                    , Text.MMark.Render
-                    , Text.MMark.Trans
-                    , Text.MMark.Type
-                    , Text.MMark.Util
+                    , Text.MMark.Internal.Parser
+                    , Text.MMark.Internal.Parser.Internal
+                    , Text.MMark.Internal.Parser.Internal.Type
+                    , Text.MMark.Internal.Render
+                    , Text.MMark.Internal.Trans
+                    , Text.MMark.Internal.Type
+                    , Text.MMark.Internal.Util
   if flag(dev)
     ghc-options:      -O0 -Wall -Werror
   else

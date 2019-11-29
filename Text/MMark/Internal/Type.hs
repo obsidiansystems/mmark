@@ -18,7 +18,7 @@
 {-# LANGUAGE DeriveLift         #-}
 {-# LANGUAGE StandaloneDeriving #-}
 
-module Text.MMark.Type
+module Text.MMark.Internal.Type
   ( MMark (..)
   , Extension (..)
   , Render (..)

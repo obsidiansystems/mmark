@@ -16,7 +16,7 @@
 {-# LANGUAGE LambdaCase                 #-}
 {-# LANGUAGE TemplateHaskell            #-}
 
-module Text.MMark.Parser.Internal.Type
+module Text.MMark.Internal.Parser.Internal.Type
   ( -- * Block-level parser state
     BlockState
   , initialBlockState
